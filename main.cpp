@@ -16,6 +16,10 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 	float kWindowWidth = 1280;
 	float kWindowHeight = 720;
 
+	Vector3 v1{ 1.2f, -3.9f, 2.5f };
+	Vector3 v2{ 2.8f, 0.4f, -1.3f };
+	Vector3 cross = Cross(v1, v2);
+	
 	Vector3 rotate{};
 	Vector3 translate{};
 	Vector3 cameraPosition{ 0, 0, -20};
@@ -77,6 +81,9 @@ int WINAPI WinMain(HINSTANCE, HINSTANCE, LPSTR, int) {
 			int(screenVertices[0].x), int(screenVertices[0].y), int(screenVertices[1].x), int(screenVertices[1].y),
 			int(screenVertices[2].x), int(screenVertices[2].y), RED, kFillModeSolid
 		);
+
+		VectorScreenPrintf(0, 0, cross, "Cross");
+
 		///
 		/// ↑描画処理ここまで
 		///
